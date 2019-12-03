@@ -9,6 +9,7 @@ import android.widget.Button;
 
 public class JugarSinRegistro extends AppCompatActivity {
 
+    public static final String KEY_JUGAR = "JUGAR";
     private Button buttonBack;
 
 

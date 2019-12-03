@@ -89,6 +89,9 @@ public class LoginActivity extends AppCompatActivity {
 
         }else{
             Intent intent = new Intent(LoginActivity.this, JugarSinRegistro.class);
+            Bundle bundle = new Bundle();
+            bundle.putString("user", user);
+            intent.putExtra(JugarSinRegistro.KEY_JUGAR, bundle);
             startActivity(intent);
             finish();
         }
