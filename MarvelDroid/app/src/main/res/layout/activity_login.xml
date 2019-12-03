@@ -94,7 +94,7 @@
         app:layout_constraintVertical_bias="0.019" />
 
     <Button
-        android:id="@+id/guardarReg"
+        android:id="@+id/siguienteLog"
         android:layout_width="152dp"
         android:layout_height="42dp"
         android:background="@android:color/holo_red_dark"

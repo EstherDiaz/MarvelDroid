@@ -64,7 +64,7 @@ public class RegistroActivity extends AppCompatActivity {
         buttonBack = findViewById(R.id.buttonBack);
         userText = findViewById(R.id.textUserReg);
         passText = findViewById(R.id.textPassReg);
-        guardar = findViewById(R.id.guardarReg);
+        guardar = findViewById(R.id.siguienteLog);
 
         buttonBack.setOnClickListener(new View.OnClickListener() {
 

@@ -1,6 +1,5 @@
 package com.example.marveldroid;
 
-import android.app.PictureInPictureParams;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -10,7 +9,6 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.marveldroid.data.DatabaseUtils;
@@ -22,6 +20,7 @@ public class LoginActivity extends AppCompatActivity {
     private PersistenceHelper persistenceHelper;
     private TextView textUserReg;
     private TextView textPassReg;
+    private Button siguienteLog;
 
 
 
@@ -29,20 +28,21 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
-        inicializar();
         this.persistenceHelper =
                 new PersistenceHelper(this,
                         DatabaseUtils.DATABASE,
                         null,
                         1);
+        inicializar();
 
     }
     private void inicializar() {
 
         buttonBack = findViewById(R.id.buttonBack);
+        siguienteLog = findViewById(R.id.siguienteLog);
         textPassReg = findViewById(R.id.textPassReg);
         textUserReg = findViewById(R.id.textUserReg);
+
 
         buttonBack.setOnClickListener(new View.OnClickListener() {
 
@@ -51,6 +51,13 @@ public class LoginActivity extends AppCompatActivity {
                 Intent intent = new Intent(LoginActivity.this, ElegirRegistroActivity.class);
                 startActivity(intent);
                 finish();
+            }
+        });
+
+        siguienteLog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loginUser();
             }
         });
 
@@ -70,6 +77,7 @@ public class LoginActivity extends AppCompatActivity {
         }
         return "";
     }
+
 
     private void loginUser(){
         String user = textUserReg.getText().toString();
