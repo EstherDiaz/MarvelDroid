@@ -31,7 +31,7 @@ public class ElegirRegistroActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ElegirRegistroActivity.this, OpcionesActivity.class);
+                Intent intent = new Intent(ElegirRegistroActivity.this, MenuActivity.class);
                 startActivity(intent);
                 finish();
             }
@@ -57,7 +57,6 @@ public class ElegirRegistroActivity extends AppCompatActivity {
             }
         });
 
-
         buttonRegistrate.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -67,6 +66,7 @@ public class ElegirRegistroActivity extends AppCompatActivity {
 
             }
         });
+
     }
 
 }

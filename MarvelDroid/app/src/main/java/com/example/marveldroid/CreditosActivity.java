@@ -25,7 +25,7 @@ public class CreditosActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(CreditosActivity.this, OpcionesActivity.class);
+                Intent intent = new Intent(CreditosActivity.this, MenuActivity.class);
                 startActivity(intent);
                 finish();
             }
