@@ -24,6 +24,14 @@ public class JuegoActivity extends AppCompatActivity {
     }
 
     private void inicializar() {
-        imaagenPuzle.setImageURI(Uri.parse(imagenUri) );
+        imaagenPuzle = findViewById(R.id.imagenPuzle);
+        imaagenPuzle.post(new Runnable() {
+            @Override
+            public void run() {
+                if (imagenUri != null) {
+                    imaagenPuzle.setImageURI(Uri.parse(imagenUri));
+                }
+            }
+        });
     }
 }
