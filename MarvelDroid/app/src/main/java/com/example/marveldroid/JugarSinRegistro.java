@@ -1,6 +1,9 @@
 package com.example.marveldroid;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.io.IOException;
+import java.io.InputStream;
 import java.net.URI;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -62,7 +65,8 @@ public class JugarSinRegistro extends AppCompatActivity {
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (resultCode==RESULT_OK) {
+
+        if (resultCode == RESULT_OK && data != null && data.getData() != null) {
             Uri miPath = data.getData();
             assert miPath != null;
             guardarImagen = BitmapFactory.decodeFile(miPath.getPath());
@@ -72,6 +76,7 @@ public class JugarSinRegistro extends AppCompatActivity {
         }
 
     }
+
 
 
 }
